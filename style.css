@@ -1,0 +1,117 @@
+body {
+    background-color: rgb(44, 42, 42);
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh; /* Ocupar toda la pantalla */
+    margin: 0; /* Eliminar márgenes por defecto */
+}
+
+.tabla {
+    display: flex;
+    flex-direction: column; /* Organizar períodos en columna */
+}
+
+
+.periodo{
+    display: flex;
+}
+
+.periodo:first-child {
+    justify-content: space-between; /* Separa los elementos a los extremos */
+    width: 100%; /* Para que ocupen toda la fila */
+}
+
+/*nth-child(2) sirve para seleccionar el periodo y el de elemento(3) para seleccionar el elemento*/
+.periodo:nth-child(2) .elemento:nth-child(3),
+.periodo:nth-child(3) .elemento:nth-child(3) {
+    margin-left: 800px;
+}
+
+.periodo:nth-child(8){
+    margin-top: 10px;
+}
+.periodo:nth-child(8) .elemento:nth-child(1),
+.periodo:nth-child(9) .elemento:nth-child(1){
+    margin-left: 240px;
+}
+
+.elemento{
+    width: 75px;
+    height: 75px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    transition: background-color 0.4s ease;
+}
+.elemento:hover{
+    transform: scale(1.2);
+    background-color: gray;
+    cursor: pointer;    
+
+}
+.contenido {
+    flex: 1; /* Hace que el div ocupe todo el espacio dentro del .elemento */
+    display: flex;
+    flex-direction: column; /* Organiza el contenido verticalmente */
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    color: black;
+    position: relative;
+}
+
+.numero-atomico {
+    position: absolute;
+    top: -4px; /* Separación desde la parte superior */
+    left: 5px; /* Separación desde la parte izquierda */
+    font-weight: bold;
+    color: black;
+}
+
+.nombre {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.info-detalle {
+    margin-top: 5px;
+    text-align: center;
+    margin-bottom: -10px;
+}
+.info-detalle p {
+    margin-top: -10px;
+}
+
+.elemento .info {
+    visibility: hidden; /* Caja oculta por defecto */
+    position: absolute;
+    top: -50px; /* Coloca la caja fuera de la vista, justo arriba del elemento */
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px); /* Coloca la caja ligeramente desplazada hacia arriba */
+    width: 150px; /* Ancho de la caja de información */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    opacity: 0; /* Caja invisible por defecto */
+    pointer-events: none; /* Asegura que no interfiera con el hover del elemento */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Transición suave para la animación */
+}
+
+
+
+.elemento:hover .info {
+    visibility: visible;
+    opacity: 1; /* Hace la caja completamente visible */
+    transform: translateX(50%) translateY(50px); /* Desplaza la informacion*/
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}

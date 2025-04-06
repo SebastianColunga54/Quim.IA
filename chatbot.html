@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quim.IA✨</title>
+    <!-- Enlazando con GOOGLE FONTS para los iconos-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@32,400,0,0" />
+    <link rel="stylesheet" href="C:\Users\ninja\Desktop\Photon.AI\style chatbot.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Encabezado (para interaccion inicial predefinida) -->
+      <header class="app-header">
+        <h1 class="heading">Bienvenido a Quim.IA</h1>
+        <h4 class="sub-heading">👋¡Hola! Soy Quim.IA, ¿Cómo puedo ayudarte a aprender química?👨🏻‍🔬🧪
+          <br>Aquí tienes algunas recomendaciones de uso: 🔍
+        </h4>
+      <!-- /*  <h4 class="sub-heading2"></h4>  */  Sub-heading2 ya declarado por se quiere hacer el 2do texto mas pequeño o cambiar otros valores-->
+      </header>
+
+      <!-- Cuadros de recomendaciones -->
+      <ul class="suggestions">
+        <li class="suggestions-item">
+          <p class="text">¿Puedes explicarme los conceptos básicos de química de forma clara y sencilla? <br>Prefiero que uses palabras fáciles de entender.</p>
+          <span class="icon material-symbols-rounded">draw</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">Me cuesta entender algunos temas de química.<br>¿Podrías usar metáforas o analogías cotidianas para explicarme mejor?</p>
+          <span class="icon material-symbols-rounded">lightbulb</span>
+        </li> 
+        <li class="suggestions-item">
+          <p class="text">Me interesa saber cómo se aplica la química en la vida real. <br>¿Podrías centrarte en sus aplicaciones prácticas?</p>
+          <span class="icon material-symbols-rounded">explore</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">Prefiero respuestas cortas y directas. <br>¿Podrías explicarme los conceptos de química de forma breve?</p>
+          <span class="icon material-symbols-rounded">code_blocks</span>
+        </li>
+      </ul>
+
+      <!-- Seccion de los chats (parte inferior) -->
+      <div class="chats-container"></div>
+
+      <!-- Entrada del texto -->
+      <div class="prompt-container">
+        <div class="prompt-wrapper">
+          <form action="#" class="prompt-form">
+            <input type="text" placeholder="Escribe tu pregunta aquí... ✍️" class="prompt-input" required />
+            <div class="prompt-actions">
+              <!-- Seccion de la carga de archivos -->
+              <div class="file-upload-wrapper">
+                <img src="#" class="file-preview" />
+                <input id="file-input" type="file" accept="image/*, .pdf, .txt, .csv" hidden />
+                <button type="button" class="file-icon material-symbols-rounded">description</button>
+                <button id="cancel-file-btn" type="button" class="material-symbols-rounded">close</button>
+                <button id="add-file-btn" type="button" class="material-symbols-rounded">attach_file</button>
+              </div>
+
+              <!-- Botones para enviar pregunta y detener generacion de respuesta del bot -->
+              <button id="stop-response-btn" type="button" class="material-symbols-rounded">stop_circle</button>
+              <button id="send-prompt-btn" class="material-symbols-rounded">arrow_upward</button>
+            </div>
+          </form>
+
+          <!-- Botones para cambiar tema y borrar el chat -->
+          <button id="theme-toggle-btn" class="material-symbols-rounded">light_mode</button>
+          <button id="delete-chats-btn" class="material-symbols-rounded">delete</button>
+        </div>
+
+        <p class="disclaimer-text">El contenido generado por IA puede no ser preciso. Se recomienda verificar la informacion.</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
